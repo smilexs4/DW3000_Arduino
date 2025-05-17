@@ -1121,13 +1121,11 @@ void DW3000Class::calculateTXRXdiff() {
 */
 void DW3000Class::printRoundTripInformation() {
     Serial.println("\nRound Trip Information:");
-    long long tx_ts = readTXTimestamp();
-    long long rx_ts = readRXTimestamp();
+    unsigned long long tx_ts = readTXTimestamp();
+    unsigned long long rx_ts = readRXTimestamp();
 
-    Serial.print("TX Timestamp: ");
-    Serial.println(tx_ts);
-    Serial.print("RX Timestamp: ");
-    Serial.println(rx_ts);
+    Serial.printf("TX Timestamp: %llu\n", tx_ts);
+    Serial.printf("RX Timestamp: %llu\n", rx_ts);
 }
 
 /*
